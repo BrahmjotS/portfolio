@@ -2,554 +2,536 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Brahmjot Singh - Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      :root {
-        --bg-main: #050816;
-        --bg-alt: #0b1020;
-        --bg-card: #11172b;
-        --bg-footer: #03050b;
-        --accent: #a855f7;
-        --accent-soft: #cdb0ff;
-        --text-main: #e5e7eb;
-        --text-muted: #9ca3af;
-        --border-subtle: #1f2937;
-        --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.5);
-        --radius-lg: 16px;
-        --radius-md: 999px;
-        --transition-fast: 0.2s ease-out;
-        --transition-med: 0.3s ease;
-        --font-body:
-          system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      }
+    <title>Brahmjot Singh | Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="images/icon/icon.svg" />
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&family=Inter:wght@400;600&family=Orbitron:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
 
-      html {
-        scroll-behavior: smooth;
-      }
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
 
-      body {
-        min-height: 100vh;
-        font-family: var(--font-body);
-        background: radial-gradient(circle at top, #1f2937 0, #050816 45%);
-        color: var(--text-main);
-        line-height: 1.6;
-        -webkit-font-smoothing: antialiased;
-      }
-
-      a {
-        color: var(--accent);
-        text-decoration: none;
-        transition:
-          color var(--transition-fast),
-          text-shadow var(--transition-fast),
-          transform var(--transition-fast),
-          background-color var(--transition-fast);
-      }
-
-      a:hover,
-      a:focus-visible {
-        color: #c4b5fd;
-        text-shadow: 0 0 8px rgba(168, 85, 247, 0.8);
-      }
-
-      img {
-        max-width: 100%;
-        display: block;
-      }
-
-      main {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 2.5rem 1.5rem 3.5rem;
-        display: flex;
-        flex-direction: column;
-        gap: 3rem;
-      }
-
-      section {
-        padding: 2rem 2.25rem;
-        background: linear-gradient(
-          135deg,
-          rgba(15, 23, 42, 0.9),
-          rgba(15, 23, 42, 0.5)
-        );
-        border-radius: 24px;
-        border: 1px solid rgba(148, 163, 184, 0.15);
-        box-shadow: var(--shadow-soft);
-        backdrop-filter: blur(12px);
-      }
-
-      h1,
-      h2 {
-        font-weight: 700;
-        letter-spacing: 0.04em;
-      }
-
-      h2 {
-        font-size: 1.4rem;
-        text-transform: uppercase;
-        color: var(--text-muted);
-        margin-bottom: 1.5rem;
-      }
-
-      .section-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1.75rem;
-      }
-
-      /* INTRO */
-
-      #home {
-        display: flex;
-        flex-direction: column;
-        gap: 1.75rem;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      }
-
-      .hero-tagline {
-        text-transform: uppercase;
-        font-size: 0.8rem;
-        letter-spacing: 0.2em;
-        color: var(--accent-soft);
-        font-weight: 600;
-      }
-
-      .hero-name {
-        font-size: 2.4rem;
-        font-weight: 800;
-        background: linear-gradient(120deg, var(--accent), #e5e7eb);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        margin-top: 0.4rem;
-        margin-bottom: 0.35rem;
-      }
-
-      .hero-subtitle {
-        font-size: 1rem;
-        color: var(--text-muted);
-      }
-
-      .hero-subtitle span {
-        color: var(--accent-soft);
-        font-weight: 600;
-      }
-
-      .hero-line {
-        max-width: 32rem;
-        color: #d1d5db;
-        font-size: 0.98rem;
-        margin-top: 0.75rem;
-      }
-
-      /* PROJECTS */
-
-      #projects {
-        background: radial-gradient(circle at top left, #1f2937 0, #020617 60%);
-      }
-
-      #projects ol {
-        list-style-position: inside;
-        counter-reset: project-counter;
-        display: flex;
-        flex-direction: column;
-        gap: 1.25rem;
-        padding-left: 0;
-      }
-
-      #projects li {
-        background: var(--bg-card);
-        border-radius: var(--radius-lg);
-        border: 1px solid var(--border-subtle);
-        padding: 1.1rem 1.3rem;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.7);
-        transition:
-          border-color var(--transition-med),
-          transform var(--transition-med),
-          box-shadow var(--transition-med),
-          background-color var(--transition-med);
-      }
-
-      #projects li::before {
-        position: absolute;
-        top: 0.95rem;
-        right: 1.15rem;
-        font-size: 0.95rem;
-        color: var(--accent-soft);
-        opacity: 0.9;
-        font-weight: 600;
-      }
-
-      .project-title {
-        font-weight: 600;
-        font-size: 1.02rem;
-        margin-bottom: 0.2rem; /* Line 1 */
-      }
-
-      .project-description {
-        font-size: 0.92rem;
-        color: var(--text-muted);
-        margin-bottom: 0.55rem; /* Line 2 */
-      }
-
-      .project-link {
-        font-size: 0.9rem;
-        display: inline-block;
-        padding: 0.2rem 0;
-        position: relative;
-        /* Line 3 */
-      }
-
-      .project-link::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -2px;
-        width: 0;
-        height: 2px;
-        border-radius: 999px;
-        background: linear-gradient(90deg, var(--accent), var(--accent-soft));
-        transition: width var(--transition-fast);
-      }
-
-      #projects li:hover {
-        border-color: var(--accent-soft);
-        background-color: #121b33;
-        transform: translateY(-3px);
-        box-shadow: 0 16px 35px rgba(15, 23, 42, 0.95);
-      }
-
-      #projects li:hover .project-link::after,
-      .project-link:focus-visible::after {
-        width: 100%;
-      }
-
-      /* SKILLS */
-
-      #skills {
-        background: linear-gradient(145deg, #020617, #020617 40%, #0f172a 100%);
-      }
-
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 0.8rem;
-      }
-
-      .skill-pill {
-        border-radius: var(--radius-md);
-        border: 1px solid rgba(148, 163, 184, 0.35);
-        padding: 0.55rem 0.8rem;
-        font-size: 0.85rem;
-        color: #e5e7eb;
-        background: radial-gradient(
-          circle at top,
-          rgba(55, 65, 81, 0.7),
-          #020617
-        );
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.8);
-        transition:
-          border-color var(--transition-med),
-          box-shadow var(--transition-med),
-          transform var(--transition-med),
-          background-color var(--transition-med);
-      }
-
-      .skill-pill:hover {
-        border-color: var(--accent-soft);
-        background-color: #111827;
-        box-shadow: 0 10px 25px rgba(88, 28, 135, 0.7);
-        transform: translateY(-2px);
-      }
-
-      /* CONTACT */
-
-      footer {
-        background-color: var(--bg-footer);
-        border-top: 1px solid rgba(51, 65, 85, 0.9);
-        margin-top: 1rem;
-      }
-
-      .footer-inner {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 1.8rem 1.5rem 2.2rem;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        gap: 0.6rem;
-      }
-
-      .footer-heading {
-        font-size: 0.95rem;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--text-muted);
-        font-weight: 600;
-      }
-
-      .footer-links {
-        display: flex;
-        justify-content: center;
-        gap: 1.75rem;
-        margin-top: 0.4rem;
-        flex-wrap: wrap;
-      }
-
-      .footer-link {
-        padding: 0.4rem 0.1rem;
-        font-size: 0.95rem;
-        display: inline-block;
-        min-width: 44px;
-        min-height: 44px;
-        line-height: 1.2;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .footer-link:hover,
-      .footer-link:focus-visible {
-        color: #e9d5ff;
-        text-shadow: 0 0 10px rgba(168, 85, 247, 0.9);
-        transform: translateY(-1px);
-      }
-
-      .footer-text {
-        font-size: 0.8rem;
-        color: var(--text-muted);
-      }
-
-      /* RESPONSIVE */
-
-      @media (max-width: 768px) {
-        main {
-          padding: 1.8rem 1rem 2.5rem;
-          gap: 2.4rem;
-        }
-
-        section {
-          padding: 1.6rem 1.3rem;
-          border-radius: 18px;
-        }
-
-        #home {
-          align-items: flex-start;
-          text-align: left;
-        }
-
-        .hero-name {
-          font-size: 2rem;
-        }
-
-        .hero-line {
-          font-size: 0.95rem;
-        }
-
-        #projects li {
-          padding: 1rem 1.05rem 1.05rem;
-        }
-
-        #projects li::before {
-          top: 0.85rem;
-          right: 0.9rem;
-        }
-
-        .skills-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-        }
-
-        .skill-pill {
-          font-size: 0.86rem;
-          padding: 0.55rem 0.6rem;
-        }
-
-        .footer-inner {
-          padding: 1.6rem 1rem 2rem;
-        }
-
-        .footer-links {
-          gap: 1.2rem;
-        }
-      }
-
-      @media (max-width: 480px) {
-        .skills-grid {
-          grid-template-columns: repeat(1, minmax(0, 1fr));
-        }
-
-        .hero-name {
-          font-size: 1.8rem;
-        }
-      }
-    </style>
+    <!-- FontAwesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body>
-    <main>
-      <!-- INTRO SECTION -->
-      <section id="home">
-        <div>
-          <h1 class="hero-name">BRAHMJOT SINGH</h1>
-          <p class="hero-subtitle">
-            B.E CSE 3rd Year Student | <span>Game Developer</span>
-          </p>
-        </div>
-        <p class="hero-line">
-          I design and build interactive game experiences, focusing on immersive
-          worlds, and polished user experiences for PCs.
+    <!-- Global Background Animation -->
+    <div class="hero-bg-anim">
+      <!-- decorative background elements -->
+      <div class="grid-line"></div>
+      <div class="grid-line horizontal"></div>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="header">
+      <div class="container nav-container">
+        <a href="#" class="logo">BRAHMJOT SINGH<span class="dot">.</span></a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-content">
+        <h1 class="hero-title">Brahmjot Singh</h1>
+        <h3 class="hero-role">Video Game Developer</h3>
+        <p class="hero-description">
+          Building immersive worlds and interactive experiences.
         </p>
-      </section>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary"><span>View Work</span></a>
+          <a href="#contact" class="btn btn-secondary"
+            ><span>Contact Me</span></a
+          >
+        </div>
+      </div>
+    </section>
 
-      <!-- PROJECTS SECTION -->
-      <section id="projects">
-        <div class="section-header">
-          <h2>Projects</h2>
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p style="margin-bottom: 20px">
+              As a Computer Science & Engineering student specializing in
+              <strong>Video Game Development</strong>, I am driven by the art of
+              creating immersive digital worlds. My focus is on
+              <strong>Video Game Development</strong> and building
+              <strong>High-Fidelity Environments</strong>, leveraging the power
+              of <strong>Unity</strong> and <strong>Blender</strong> to bring
+              ideas to life.
+            </p>
+            <p>
+              From core gameplay mechanics and physics simulations using
+              <strong>C#</strong> to developing
+              <strong>multiplayer experiences</strong> with
+              <strong>Photon PUN</strong>, creating and texturing detailed
+              <strong>3D</strong> assets, and polishing <strong>UI/UX</strong>,
+              I handle the entire development pipeline. I am constantly
+              exploring new technologies and am eager to collaborate on
+              innovative, real-world projects.
+            </p>
+          </div>
+
+          <div class="about-resume">
+            <h3>My Resume</h3>
+            <p>Check out my full professional experience and education.</p>
+            <a
+              href="https://drive.google.com/file/d/1kQxnV0MUl-7Kg6QYL3We0eKRvEVG_Fi6/view?usp=drive_link"
+              target="_blank"
+              class="btn btn-primary"
+            >
+              <span>View Resume</span>
+              <i class="fas fa-file-alt"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills-category">
+          <h3>Languages</h3>
+          <div class="skill-chips">
+            <span class="chip">C</span>
+            <span class="chip">C++</span>
+            <span class="chip">C#</span>
+            <span class="chip">Python</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">TypeScript</span>
+          </div>
         </div>
 
-        <ol>
-          <li>
-            <div class="project-title">Soccer Grind: 2-Player Soccer</div>
-            <p class="project-description">
-              A Unity-based local 2-player soccer game with vertical
-              split-screen, physics-driven ball movement, and
-              keyboard-controlled multiplayer competitive gameplay.
-            </p>
-            <a
-              href="https://drive.google.com/drive/folders/1oYkj60ZZ523V85nJaSmfGNrAJ51DC2rT?usp=drive_link"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="project-link"
-              >Try it out</a
-            >
-          </li>
-
-          <li>
-            <div class="project-title">
-              Galaxy Runner: Gravity Manipulation 2D Side Scroller
-            </div>
-            <p class="project-description">
-              A 2D side-scroller built around gravity-shifting mechanics that
-              redefine movement and level traversal.
-            </p>
-            <a
-              href="https://drive.google.com/drive/folders/1BibWU3as_o63xjjaRY_ZS_8aW79V9UK3?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="project-link"
-              >Try it out</a
-            >
-          </li>
-
-          <li>
-            <div class="project-title">
-              Predator Manor: Online Multiplayer Sandbox
-            </div>
-            <p class="project-description">
-              A 3D online multiplayer hide-and-hunt game using Photon PUN, with
-              networked player roles, synchronized movement & counter, and
-              competitive hunt mechanics.
-            </p>
-            <a
-              href="https://drive.google.com/drive/folders/1WUnsC0Nb_KkN_siuZ4eRUeL9-Rw6R6NM?usp=drive_link"
-              class="project-link"
-              >Try it out</a
-            >
-          </li>
-
-          <li>
-            <div class="project-title">
-              Cookie Smash: Touch based Snapchat Lens Game
-            </div>
-            <p class="project-description">
-              A Snapchat game featuring simple interactions, real-time feedback,
-              and fast, casual gameplay developed using Snapchat Lens Studio.
-            </p>
-            <a
-              href="https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=2e6f38b671d645988cdb455ad7fb1613&metadata=01"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="project-link"
-              >Create a snap</a
-            >
-          </li>
-        </ol>
-      </section>
-
-      <!-- SKILLS SECTION -->
-      <section id="skills">
-        <div class="section-header">
-          <h2>Skills</h2>
+        <div class="skills-category">
+          <h3>Game Engines</h3>
+          <div class="skill-chips">
+            <span class="chip">Unity (2D & 3D)</span>
+            <span class="chip">Unreal Engine (Learning)</span>
+          </div>
         </div>
 
-        <div class="skills-grid">
-          <div class="skill-pill">Unity Engine (2D, 3D)</div>
-          <!-- <div class="skill-pill">Photon Unity Networking (PUN)</div> -->
-          <!-- <div class="skill-pill">Unreal Engine (3D)</div> -->
-          <!-- <div class="skill-pill">Figma</div> -->
-          <div class="skill-pill">Blender</div>
-          <!-- <div class="skill-pill">Autodesk Maya</div> -->
-          <div class="skill-pill">Adobe Photoshop</div>
-          <div class="skill-pill">Snapchat Lens Studio</div>
+        <div class="skills-category">
+          <h3>Frameworks & Pipelines</h3>
+          <div class="skill-chips">
+            <span class="chip">Photon PUN (Unity)</span>
+            <span class="chip">Electron (Windows)</span>
+            <span class="chip">React (Web)</span>
+          </div>
         </div>
-      </section>
-    </main>
 
-    <!-- CONTACT SECTION -->
-    <footer>
-      <div class="footer-inner">
-        <p class="footer-heading">Let's Connect</p>
-        <div class="footer-links">
-          <a href="mailto:brhmsingh.5@gmail.com" class="footer-link">Email</a>
+        <div class="skills-category">
+          <h3>Tools & Platforms</h3>
+          <div class="skill-chips">
+            <span class="chip">Blender</span>
+            <span class="chip">Adobe Photoshop</span>
+            <span class="chip">Snapchat Lens Studio</span>
+            <span class="chip">Linux (Red Hat)</span>
+            <span class="chip">Visual Studio</span>
+            <span class="chip">Visual Studio Code</span>
+            <span class="chip">Git/GitHub</span>
+            <span class="chip">AWS (EC2 & S3)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="project-category">
+          <h3 class="category-title">Game Development</h3>
+          <div class="projects-grid" id="games-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+              <div class="card-image-slider">
+                <div
+                  class="slide active"
+                  style="
+                    background-image: url(&quot;images/galaxy_runner/img1.png&quot;);
+                  "
+                ></div>
+                <div
+                  class="slide"
+                  style="
+                    background-image: url(&quot;images/galaxy_runner/img2.png&quot;);
+                  "
+                ></div>
+                <div
+                  class="slide"
+                  style="
+                    background-image: url(&quot;images/galaxy_runner/img3.png&quot;);
+                  "
+                ></div>
+                <div
+                  class="slide"
+                  style="
+                    background-image: url(&quot;images/galaxy_runner/img4.png&quot;);
+                  "
+                ></div>
+                <div
+                  class="slide"
+                  style="
+                    background-image: url(&quot;images/galaxy_runner/img5.png&quot;);
+                  "
+                ></div>
+                <div
+                  class="slide"
+                  style="
+                    background-image: url(&quot;images/galaxy_runner/img6.png&quot;);
+                  "
+                ></div>
+              </div>
+              <div class="card-content">
+                <h4>Galaxy Runner</h4>
+                <h5>Gravity Manipulation Platformer</h5>
+                <p>
+                  A 2D side-scroller built around gravity-shifting mechanics
+                  that redefine movement and level traversal.
+                </p>
+                <div class="tags"><span>Unity</span><span>C#</span></div>
+                <a
+                  href="https://drive.google.com/drive/folders/1BibWU3as_o63xjjaRY_ZS_8aW79V9UK3?usp=sharing"
+                  target="_blank"
+                  class="btn-card"
+                  ><span>Try It Out</span></a
+                >
+              </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card">
+              <div class="card-image-slider">
+                <div
+                  class="slide active"
+                  style="
+                    background-image: url(&quot;images/soccer_grind/img1.png&quot;);
+                  "
+                ></div>
+                <div
+                  class="slide"
+                  style="
+                    background-image: url(&quot;images/soccer_grind/img2.png&quot;);
+                  "
+                ></div>
+                <div
+                  class="slide"
+                  style="
+                    background-image: url(&quot;images/soccer_grind/img3.png&quot;);
+                  "
+                ></div>
+                <div
+                  class="slide"
+                  style="
+                    background-image: url(&quot;images/soccer_grind/img4.png&quot;);
+                  "
+                ></div>
+                <div
+                  class="slide"
+                  style="
+                    background-image: url(&quot;images/soccer_grind/img5.png&quot;);
+                  "
+                ></div>
+              </div>
+              <div class="card-content">
+                <h4>Soccer Grind</h4>
+                <h5>Split-Screen Football</h5>
+                <p>
+                  A Unity-based local 2-player soccer game with vertical
+                  split-screen, physics-driven ball movement, and
+                  keyboard-controlled multiplayer competitive gameplay.
+                </p>
+                <div class="tags"><span>Unity</span><span>C#</span></div>
+                <a
+                  href="https://drive.google.com/drive/folders/1oYkj60ZZ523V85nJaSmfGNrAJ51DC2rT?usp=drive_link"
+                  target="_blank"
+                  class="btn-card"
+                  ><span>Try It Out</span></a
+                >
+              </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card">
+              <div class="card-image-slider">
+                <div
+                  class="slide active"
+                  style="
+                    background-image: url(&quot;images/predator_manor/img1.png&quot;);
+                  "
+                ></div>
+                <div
+                  class="slide"
+                  style="
+                    background-image: url(&quot;images/predator_manor/img2.png&quot;);
+                  "
+                ></div>
+                <div
+                  class="slide"
+                  style="
+                    background-image: url(&quot;images/predator_manor/img3.png&quot;);
+                  "
+                ></div>
+                <div
+                  class="slide"
+                  style="
+                    background-image: url(&quot;images/predator_manor/img4.png&quot;);
+                  "
+                ></div>
+                <div
+                  class="slide"
+                  style="
+                    background-image: url(&quot;images/predator_manor/img6.png&quot;);
+                  "
+                ></div>
+                <div
+                  class="slide"
+                  style="
+                    background-image: url(&quot;images/predator_manor/img7.png&quot;);
+                  "
+                ></div>
+                <div
+                  class="slide"
+                  style="
+                    background-image: url(&quot;images/predator_manor/img8.png&quot;);
+                  "
+                ></div>
+                <div
+                  class="slide"
+                  style="
+                    background-image: url(&quot;images/predator_manor/img9.png&quot;);
+                  "
+                ></div>
+              </div>
+              <div class="card-content">
+                <h4>Predator Manor</h4>
+                <h5>Online Multiplayer Sandbox</h5>
+                <p>
+                  A 3D online multiplayer run and catch game using Photon PUN,
+                  with networked player roles, synchronized movement & counter,
+                  and competitive hunt mechanics.
+                </p>
+                <div class="tags">
+                  <span>Unity</span><span>C#</span><span>Photon PUN</span>
+                </div>
+                <a
+                  href="https://drive.google.com/drive/folders/1WUnsC0Nb_KkN_siuZ4eRUeL9-Rw6R6NM?usp=drive_link"
+                  target="_blank"
+                  class="btn-card"
+                  ><span>Try It Out</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="project-category">
+          <h3 class="category-title">3D Modelling</h3>
+          <div class="projects-grid" id="3d-grid">
+            <div class="project-card">
+              <div class="card-image-slider">
+                <div
+                  class="slide active"
+                  style="background-image: url(&quot;images/3d/img1.png&quot;)"
+                ></div>
+                <div
+                  class="slide"
+                  style="background-image: url(&quot;images/3d/img2.png&quot;)"
+                ></div>
+                <div
+                  class="slide"
+                  style="background-image: url(&quot;images/3d/img3.png&quot;)"
+                ></div>
+                <div
+                  class="slide"
+                  style="background-image: url(&quot;images/3d/img4.png&quot;)"
+                ></div>
+                <div
+                  class="slide"
+                  style="background-image: url(&quot;images/3d/img5.png&quot;)"
+                ></div>
+              </div>
+              <div class="card-content">
+                <h4>3D Art</h4>
+                <p>
+                  Environment and game prop modeling using Blender & texturing
+                  using Adobe Photoshop.
+                </p>
+                <div class="tags">
+                  <span>Blender</span><span>Modeling</span
+                  ><span>Texturing</span>
+                </div>
+                <a
+                  href="https://www.artstation.com/brahmjii1"
+                  target="_blank"
+                  class="btn-card btn-gallery"
+                  ><span>View Gallery</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="project-category">
+          <h3 class="category-title">AI / Machine Learning</h3>
+          <div class="projects-grid" id="ai-grid">
+            <div class="project-card">
+              <div class="card-content">
+                <h4>American Sign Language Translator</h4>
+                <h5>Computer Vision & ML Model</h5>
+                <p>
+                  Translate ASL gestures into text using computer vision and
+                  machine learning, with a quiz module based on ASL images and
+                  multiple-choice questions.
+                </p>
+                <div class="tags">
+                  <span>Python</span><span>OpenCV</span><span>MediaPipe</span
+                  ><span>Flask</span>
+                </div>
+                <a
+                  href="https://github.com/ayushchauhan22/SignSpeaks"
+                  target="_blank"
+                  class="btn-card"
+                  ><span>View Project</span></a
+                >
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="card-content">
+                <h4>AI Resume Analysis</h4>
+                <h5>NLP & AI System</h5>
+                <p>
+                  Analyzes resumes using natural language processing and a
+                  fine-tuned Google Gemma model trained on a custom dataset to
+                  align with 2026 resume trends, delivering ATS scores,
+                  improvement recommendations, and personalized job title
+                  suggestions.
+                </p>
+                <div class="tags">
+                  <span>Python</span><span>PyTorch</span><span>CUDA</span
+                  ><span>Flask</span>
+                </div>
+                <a
+                  href="https://github.com/BrahmjotS/ATS-Analysis-Model"
+                  target="_blank"
+                  class="btn-card"
+                  ><span>View Project</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-category">
+          <h3 class="category-title">Others</h3>
+          <div class="projects-grid" id="other-grid">
+            <div class="project-card">
+              <div class="card-content">
+                <h4>Color Slider</h4>
+                <h5>Web to Windows App</h5>
+                <p>
+                  Converted a simple HTML page into a standalone Windows
+                  application using Electron.
+                </p>
+                <div class="tags">
+                  <span>Electron</span><span>HTML</span><span>JavaScript</span>
+                </div>
+                <a
+                  href="https://drive.google.com/drive/folders/1QXdMPRR83yXWHcQzL4WJlmVVv0jqNwS6?usp=sharing"
+                  target="_blank"
+                  class="btn-card"
+                  ><span>Download</span></a
+                >
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="card-content">
+                <h4>Cookie Smash</h4>
+                <h5>Snapchat AR Lens</h5>
+                <p>
+                  A Snapchat game featuring simple interactions, real-time
+                  feedback, and fast, casual gameplay developed using Snapchat
+                  Lens Studio.
+                </p>
+                <div class="tags">
+                  <span>Snapchat Lens Studio</span><span>AR</span
+                  ><span>Touch-based</span>
+                </div>
+                <a
+                  href="https://www.snapchat.com/unlock/?type=SNAPCODE&uuid=2e6f38b671d645988cdb455ad7fb1613&metadata=01"
+                  target="_blank"
+                  class="btn-card"
+                  ><span>Create a snap</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Connect</h2>
+        <div class="contact-grid">
+          <a
+            href="https://linkedin.com/in/brahmjotsinghz/"
+            target="_blank"
+            class="contact-card"
+          >
+            <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
           <a
             href="https://github.com/BrahmjotS"
             target="_blank"
-            rel="noopener noreferrer"
-            class="footer-link"
-            >GitHub</a
+            class="contact-card"
           >
-
-          <a
-            href="https://www.linkedin.com/in/brahmjotsinghz/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="footer-link"
-            >LinkedIn</a
-          >
-          <a
-            href="https://drive.google.com/file/d/1kQxnV0MUl-7Kg6QYL3We0eKRvEVG_Fi6/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="footer-link"
-            >Resume</a
-          >
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
+          </a>
+          <a href="mailto:brhmsingh.5@gmail.com" class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <span>Email</span>
+          </a>
+          <a href="sms:+919888259977" class="contact-card">
+            <i class="fas fa-sms"></i>
+            <span>Phone</span>
+          </a>
         </div>
-        <p class="footer-text">
-          Pre-final year game development student &mdash; open to internships,
-          collaborations, and game jams.
-        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2026 Brahmjot Singh. All rights reserved.</p>
       </div>
     </footer>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
-
-
-
-
-
-
