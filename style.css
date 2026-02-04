@@ -669,7 +669,7 @@ ul {
   }
 
   .nav-links li {
-    margin: 10px 0; /* Reduced margin */
+    margin: 1.5px 0; /* Reduced margin */
     width: 100%;
     text-align: center;
     border-bottom: 1px solid var(--primary-color);
@@ -704,3 +704,4 @@ ul {
 .contact-card:hover i {
   transform: scale(1.2);
 }
+
