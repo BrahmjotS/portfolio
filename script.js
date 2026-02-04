@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
       { y: -50, opacity: 0, duration: 0.8, stagger: 0.1 },
       "-=0.5",
     )
-    .from(".hero-subtitle", { x: -50, opacity: 0, duration: 0.8 }, "-=0.5")
     .from(
       ".hero-title",
       { scale: 0.9, opacity: 0, duration: 1, ease: "back.out(1.7)" },
@@ -141,4 +140,44 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   initSlideshows();
+
+  /* Hamburger Menu Logic */
+  const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+  const navItems = document.querySelectorAll(".nav-links li a");
+  const closeBtn = document.querySelector(".nav-close-btn");
+
+  if (hamburger) {
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+
+      // Toggle hamburger icon (bars to X)
+      const icon = hamburger.querySelector("i");
+      if (navLinks.classList.contains("active")) {
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-times");
+      } else {
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+      }
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        const icon = hamburger.querySelector("i");
+        icon.classList.remove("fa-times");
+        icon.classList.add("fa-bars");
+      });
+    }
+
+    // Close menu when a link is clicked
+    navItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        hamburger.querySelector("i").classList.remove("fa-times");
+        hamburger.querySelector("i").classList.add("fa-bars");
+      });
+    });
+  }
 });
