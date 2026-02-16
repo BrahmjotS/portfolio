@@ -664,7 +664,7 @@ ul {
     width: 250px; /* Compact width */
     height: auto; /* Auto height based on content */
     background: rgba(10, 10, 10, 0.95);
-    border: 1px solid var(--primary-color);
+    /* border: 1px solid var(--primary-color); */
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
@@ -686,7 +686,8 @@ ul {
     margin: 2px 0;
     width: 100%;
     text-align: center;
-    border-bottom: 1px solid var(--primary-color);
+    border-bottom: 1px solid;
+    border-color: #c840f7;
     box-shadow: 0 1px 5px rgba(0, 243, 255, 0.2); /* Add subtle glow */
     padding-bottom: 5px;
   }
