@@ -370,6 +370,19 @@ ul {
   outline: none;
 }
 
+.chip:hover {
+  background-color: var(--primary-color);
+  color: #000;
+  transform: scale(1.1) !important;
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
+  cursor: pointer;
+}
+
+/* Add zoom on text specifically */
+.chip:hover span {
+  transform: scale(1.2);
+}
+
 /* Removed interactive chip styles (.chip:hover, .chip span) as requested */
 .chip span {
   display: inline-block;
