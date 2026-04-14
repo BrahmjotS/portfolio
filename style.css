@@ -316,24 +316,42 @@ ul {
 }
 
 .about-resume {
-  margin-top: 40px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
   padding: 30px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--glass-border);
   border-radius: 10px;
-  display: inline-block; /* Center it */
-  backdrop-filter: blur(5px); /* Added blur */
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  backdrop-filter: blur(5px);
+  text-align: center;
+  max-width: 350px;
+  vertical-align: top;
 }
 
 .about-resume h3 {
   color: var(--primary-color);
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   font-size: 1.5rem;
 }
 
 .about-resume p {
   color: #aaa;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+}
+
+.about-resume .btn {
+  width: 100%;
+}
+
+.about-resume .btn span {
+  font-size: 0.8rem;
 }
 
 /* Skills Section */
@@ -657,6 +675,12 @@ ul {
     flex-direction: column;
     width: 100%;
     max-width: 300px;
+  }
+
+  .about-resume {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
   }
 
   .nav-links {
